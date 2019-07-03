@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/VAO61/lodoss__learn_chapter-08#readme",
   "devDependencies": {
-    "jest": "^24.8.0"
+    "@types/node": "^12.0.10",
+    "jest": "^24.8.0",
+    "typescript": "^3.5.2"
   },
   "jest": {
     "collectCoverage": true,
