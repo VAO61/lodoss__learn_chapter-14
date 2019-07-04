@@ -1,10 +1,15 @@
 {
   "compilerOptions": {
-    "outDir": "./built",
-    "allowJs": true,
-    "target": "es6"
-  },
-  "include": ["./src/**/*"]
+    // "outDir": "./built",
+    // "allowJs": true,
+    // "target": "es6"
+    "module": "commonjs",
+    "target": "ES5",
+    "outDir": "ts-built",
+    "rootDir": "src"
+  }
+  // "include": ["./app/**/*"],
+  // "exclude": ["node_modules"]
 }
 // {
 //   "compilerOptions": {
