@@ -1,4 +1,4 @@
-const Project = require('./Project.js');
+const Project = require('./Project.ts');
 
 class MobileProject extends Project {
   constructor(difficulty) {

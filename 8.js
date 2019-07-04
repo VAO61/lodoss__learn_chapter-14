@@ -1,7 +1,6 @@
-const Manager = require('./app/Manager.js');
-const IncomingData = require('./app/IncomingData.ts');
-
-const manager = new Manager();
-const incomingData = new IncomingData(manager, 500);
+var Manager = require('./app/Manager.ts');
+var IncomingData = require('./app/IncomingData.ts');
+var manager = new Manager();
+var incomingData = new IncomingData(manager, 500);
 incomingData.start();
 incomingData.statistic();

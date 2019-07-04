@@ -1,6 +1,6 @@
-const WebDeveloper = require('../developers/WebDeveloper.js');
-const MobileDeveloper = require('../developers/MobileDeveloper.js');
-const TestDeveloper = require('../developers/TestDeveloper.js');
+const WebDeveloper = require('../developers/WebDeveloper.ts');
+const MobileDeveloper = require('../developers/MobileDeveloper.ts');
+const TestDeveloper = require('../developers/TestDeveloper.ts');
 
 const DeveloperFactory = {
   createMobileDeveloper() {

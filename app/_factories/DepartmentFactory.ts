@@ -1,6 +1,6 @@
-const WebDept = require('../department/WebDept.js');
-const MobileDept = require('../department/MobileDept.js');
-const TestDept = require('../department/TestDept.js');
+const WebDept = require('../department/WebDept.ts');
+const MobileDept = require('../department/MobileDept.ts');
+const TestDept = require('../department/TestDept.ts');
 
 const DepartmentFactory = {
   createWebDept() {

@@ -1,4 +1,4 @@
-const Project = require('./Project.js');
+const Project = require('./Project.ts');
 
 class WebProject extends Project {
   constructor(difficulty) {

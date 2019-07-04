@@ -1,5 +1,5 @@
-const WebProject = require('../projects/WebProject.js');
-const MobileProject = require('../projects/MobileProject.js');
+const WebProject = require('../projects/WebProject.ts');
+const MobileProject = require('../projects/MobileProject.ts');
 
 const ProjectFactory = {
   getRandom(min, max) {

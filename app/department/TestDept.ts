@@ -1,5 +1,5 @@
-const DeveloperFactory = require('../_factories/DeveloperFactory.js');
-const Department = require('./Department.js');
+const DeveloperFactory = require('../_factories/DeveloperFactory.ts');
+const Department = require('./Department.ts');
 
 class TestDept extends Department {
   constructor() {

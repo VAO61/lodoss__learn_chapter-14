@@ -1,13 +1,13 @@
-const DepartmentFactory = require('./_factories/DepartmentFactory.js');
+const DepartmentFactory = require('./_factories/DepartmentFactory.ts');
 
-const WebProject = require('./projects/WebProject.js');
-const MobileProject = require('./projects/MobileProject.js');
+const WebProject = require('./projects/WebProject.ts');
+const MobileProject = require('./projects/MobileProject.ts');
 // Не используются пока
-// const TestProject = require('./projects/TestProject.js');
+// const TestProject = require('./projects/TestProject.ts');
 
-// const WebDeveloper = require('./developers/WebDeveloper.js');
-// const MobileDeveloper = require('./developers/MobileDeveloper.js');
-// const TestDeveloper = require('./developers/TestDeveloper.js');
+// const WebDeveloper = require('./developers/WebDeveloper.ts');
+// const MobileDeveloper = require('./developers/MobileDeveloper.ts');
+// const TestDeveloper = require('./developers/TestDeveloper.ts');
 
 class Manager {
   constructor() {

@@ -1,6 +1,6 @@
-const Department = require('./Department.js');
-// const MobileDeveloper = require('../developers/MobileDeveloper.js');
-const DeveloperFactory = require('../_factories/DeveloperFactory.js');
+const Department = require('./Department.ts');
+// const MobileDeveloper = require('../developers/MobileDeveloper.ts');
+const DeveloperFactory = require('../_factories/DeveloperFactory.ts');
 
 class MobileDept extends Department {
   constructor() {

@@ -1,4 +1,4 @@
-const ProjectFactory = require('./_factories/ProjectFactory.js');
+const ProjectFactory = require('./_factories/ProjectFactory.ts');
 
 class IncomingData {
   constructor(manager, days) {

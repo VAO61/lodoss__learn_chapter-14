@@ -1,4 +1,4 @@
-const Developer = require('./Developer.js');
+const Developer = require('./Developer.ts');
 
 class TestDeveloper extends Developer {
   constructor() {
