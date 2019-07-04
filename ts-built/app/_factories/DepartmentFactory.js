@@ -9,7 +9,6 @@ const DepartmentFactory = {
     },
     createTestDept() {
         return new TestDept_1.TestDept();
-        // TODO: +++++++++++++++++++
     },
     createWebDept() {
         return new WebDept_1.WebDept();

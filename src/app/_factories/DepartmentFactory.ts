@@ -8,7 +8,6 @@ const DepartmentFactory = {
   },
   createTestDept() {
     return new TestDept();
-    // TODO: +++++++++++++++++++
   },
   createWebDept() {
     return new WebDept();
