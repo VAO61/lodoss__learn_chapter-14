@@ -1,5 +1,5 @@
 import { MobileDept } from '../department/MobileDept';
-export { TestDept } from '../department/TestDept';
+import { TestDept } from '../department/TestDept';
 import { WebDept } from '../department/WebDept';
 
 const DepartmentFactory = {
