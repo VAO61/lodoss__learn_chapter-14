@@ -1,26 +1,29 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Developer = /** @class */ (function () {
-    function Developer() {
+class Developer {
+    constructor() {
+        this.skill = 0;
+        this.project = null;
+        this.unBusyCount = 0;
         this.skill = 0;
         this.project = null;
         this.unBusyCount = 0;
     }
     // ты занят?
-    Developer.prototype.isBusy = function () {
+    isBusy() {
         return !!this.project;
-    };
-    Developer.prototype.startProject = function (project) {
+    }
+    startProject(project) {
         // Назначаем проект разработчику
         this.project = project;
         // Обнуляем счетчик дней простоя разработчика
         this.unBusyCount = 0;
-    };
-    Developer.prototype.stopProject = function () {
+    }
+    stopProject() {
         this.project = null;
         this.skill++;
-    };
-    Developer.prototype.work = function () {
+    }
+    work() {
         if (this.project !== null) {
             // Увеличиваем прогресс выполнения проекта
             this.project.progress++;
@@ -29,7 +32,6 @@ var Developer = /** @class */ (function () {
             // Увеличиваем простой на 1 (день) если сотруднику не назначен проект
             this.unBusyCount++;
         }
-    };
-    return Developer;
-}());
+    }
+}
 exports.Developer = Developer;

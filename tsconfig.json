@@ -4,12 +4,12 @@
     // "allowJs": true,
     // "target": "es6"
     "module": "commonjs",
-    "target": "ES5",
+    "target": "ES6",
     "outDir": "ts-built",
     "rootDir": "src"
-  }
+  },
   // "include": ["./app/**/*"],
-  // "exclude": ["node_modules"]
+  "exclude": ["node_modules"]
 }
 // {
 //   "compilerOptions": {

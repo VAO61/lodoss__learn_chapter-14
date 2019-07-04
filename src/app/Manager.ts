@@ -4,6 +4,14 @@ import { WebProject } from './projects/WebProject';
 import { MobileProject } from './projects/MobileProject';
 
 class Manager {
+  webDept;
+  mobileDept;
+  testDept;
+  pendingProjects = []; // ожидающие принятия проекты
+  devDoneProjects = [];
+  doneProjects = [];
+  statisticHiredDevelopers = 0;
+
   constructor() {
     this.webDept = DepartmentFactory.createWebDept();
     this.mobileDept = DepartmentFactory.createMobileDept();

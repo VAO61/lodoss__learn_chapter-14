@@ -1,4 +1,8 @@
 class Developer {
+  skill = 0;
+  project = null;
+  unBusyCount = 0;
+
   constructor() {
     this.skill = 0;
     this.project = null;

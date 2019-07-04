@@ -1,18 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var MobileDept_1 = require("../department/MobileDept");
+const MobileDept_1 = require("../department/MobileDept");
 var TestDept_1 = require("../department/TestDept");
 exports.TestDept = TestDept_1.TestDept;
-var WebDept_1 = require("../department/WebDept");
-var DepartmentFactory = {
-    createMobileDept: function () {
+const WebDept_1 = require("../department/WebDept");
+const DepartmentFactory = {
+    createMobileDept() {
         return new MobileDept_1.MobileDept();
     },
-    createTestDept: function () {
+    createTestDept() {
         return new TestDept();
         // TODO: +++++++++++++++++++
     },
-    createWebDept: function () {
+    createWebDept() {
         return new WebDept_1.WebDept();
     }
 };

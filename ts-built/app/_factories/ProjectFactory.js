@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var WebProject_1 = require("../projects/WebProject");
-var MobileProject_1 = require("../projects/MobileProject");
-var ProjectFactory = {
-    getRandom: function (min, max) {
+const WebProject_1 = require("../projects/WebProject");
+const MobileProject_1 = require("../projects/MobileProject");
+const ProjectFactory = {
+    getRandom(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     },
-    createRandomProject: function () {
+    createRandomProject() {
         if (Math.random() > 0.5) {
             return new WebProject_1.WebProject(ProjectFactory.getRandom(1, 3));
         }

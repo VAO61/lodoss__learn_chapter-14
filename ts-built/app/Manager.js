@@ -1,10 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var DepartmentFactory_1 = require("./_factories/DepartmentFactory");
-var WebProject_1 = require("./projects/WebProject");
-var MobileProject_1 = require("./projects/MobileProject");
-var Manager = /** @class */ (function () {
-    function Manager() {
+const DepartmentFactory_1 = require("./_factories/DepartmentFactory");
+const WebProject_1 = require("./projects/WebProject");
+const MobileProject_1 = require("./projects/MobileProject");
+class Manager {
+    constructor() {
+        this.pendingProjects = []; // ожидающие принятия проекты
+        this.devDoneProjects = [];
+        this.doneProjects = [];
+        this.statisticHiredDevelopers = 0;
         this.webDept = DepartmentFactory_1.DepartmentFactory.createWebDept();
         this.mobileDept = DepartmentFactory_1.DepartmentFactory.createMobileDept();
         this.testDept = DepartmentFactory_1.DepartmentFactory.createTestDept();
@@ -13,43 +17,40 @@ var Manager = /** @class */ (function () {
         this.doneProjects = [];
         this.statisticHiredDevelopers = 0;
     }
-    Manager.prototype.hiredDevelopers = function () {
-        var _this = this;
+    hiredDevelopers() {
         // Найм сотрудников. Минимум один разработчик на один проект
-        this.pendingProjects.forEach(function (project) {
+        this.pendingProjects.forEach(project => {
             if (project instanceof WebProject_1.WebProject) {
-                _this.webDept.hiredDevelopers();
-                _this.statisticHiredDevelopers++;
+                this.webDept.hiredDevelopers();
+                this.statisticHiredDevelopers++;
             }
             else if (project instanceof MobileProject_1.MobileProject) {
-                _this.mobileDept.hiredDevelopers();
-                _this.statisticHiredDevelopers++;
+                this.mobileDept.hiredDevelopers();
+                this.statisticHiredDevelopers++;
             }
         });
-        this.devDoneProjects.forEach(function () {
-            _this.testDept.hiredDevelopers();
-            _this.statisticHiredDevelopers++;
+        this.devDoneProjects.forEach(() => {
+            this.testDept.hiredDevelopers();
+            this.statisticHiredDevelopers++;
         });
-    };
-    Manager.prototype.generatePendingProjects = function (projects) {
-        var _a;
+    }
+    generatePendingProjects(projects) {
         // добавление проектов от заказчика в массив невыполненных проектов у директора (склад проектов директора)
-        (_a = this.pendingProjects).push.apply(_a, projects);
-    };
-    Manager.prototype.addProjects = function (projects) {
+        this.pendingProjects.push(...projects);
+    }
+    addProjects(projects) {
         this.generatePendingProjects(projects);
-    };
-    Manager.prototype.work = function () {
-        var _a;
+    }
+    work() {
         // Выполняется функция найма сотрудников
         this.hiredDevelopers();
         // Без временного массива не обойтись для решения поставленной ментором задачи (while + .sort + .pop) без потери проектов, не попавших в разработку
-        var tmp = [];
+        const tmp = [];
         // распихиваем проекты со склада по отделам мобильной и веб разработок
-        this.pendingProjects.sort(function (a, b) { return a.difficulty - b.difficulty; });
+        this.pendingProjects.sort((a, b) => a.difficulty - b.difficulty);
         while (this.pendingProjects.length > 0) {
             // Забираем проекты из отсортированного массива по одному
-            var project = this.pendingProjects.pop();
+            const project = this.pendingProjects.pop();
             if (project instanceof WebProject_1.WebProject &&
                 project.difficulty <= this.webDept.getSafeLoad()) {
                 this.webDept.projects.push(project);
@@ -64,7 +65,7 @@ var Manager = /** @class */ (function () {
             }
         }
         // Обновляем массив проектов для реализации в последующий день
-        (_a = this.pendingProjects).push.apply(_a, tmp);
+        this.pendingProjects.push(...tmp);
         // забираем готовые проекты у отделов веб и мобильной разработки, и передаем их тестировщикам
         this.transferToTestDeptProjects();
         // забирает у отдела тестирования заерщенные проекты и скадируем в список завершенных
@@ -77,16 +78,15 @@ var Manager = /** @class */ (function () {
         this.webDept.firedDevelopers();
         this.mobileDept.firedDevelopers();
         this.testDept.firedDevelopers();
-    };
+    }
     /**
      * Забирает у отделов Web и Mobile завершенные проекты, и отдает их по возможности в отдел тестирования
      */
-    Manager.prototype.transferToTestDeptProjects = function () {
-        var _a, _b;
-        (_a = this.devDoneProjects).push.apply(_a, this.webDept.takeDevDonProjectsTransfer().concat(this.mobileDept.takeDevDonProjectsTransfer()));
-        var tmp = [];
+    transferToTestDeptProjects() {
+        this.devDoneProjects.push(...this.webDept.takeDevDonProjectsTransfer(), ...this.mobileDept.takeDevDonProjectsTransfer());
+        const tmp = [];
         while (this.devDoneProjects.length > 0) {
-            var project = this.devDoneProjects.pop();
+            const project = this.devDoneProjects.pop();
             if (this.testDept.getSafeLoad() > 0) {
                 this.testDept.projects.push(project);
             }
@@ -94,13 +94,11 @@ var Manager = /** @class */ (function () {
                 tmp.push(project);
             }
         }
-        (_b = this.devDoneProjects).push.apply(_b, tmp);
-    };
-    Manager.prototype.getCompletedProjects = function () {
-        var _a;
+        this.devDoneProjects.push(...tmp);
+    }
+    getCompletedProjects() {
         // забирает у отдела тестирования заерщенные проекты и скадируем в список завершенных
-        (_a = this.doneProjects).push.apply(_a, this.testDept.takeDevDonProjectsTransfer());
-    };
-    return Manager;
-}());
+        this.doneProjects.push(...this.testDept.takeDevDonProjectsTransfer());
+    }
+}
 exports.Manager = Manager;

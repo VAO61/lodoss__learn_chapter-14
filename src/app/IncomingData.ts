@@ -1,6 +1,9 @@
 import { ProjectFactory } from './_factories/ProjectFactory';
 
 class IncomingData {
+  manager;
+  days;
+
   constructor(manager, days) {
     this.manager = manager;
     this.days = days;
