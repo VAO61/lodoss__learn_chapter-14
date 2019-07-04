@@ -1,7 +1,7 @@
 class Developer {
-  skill = 0;
-  project = null;
-  unBusyCount = 0;
+  public skill: number;
+  public project: any;
+  public unBusyCount: any;
 
   constructor() {
     this.skill = 0;

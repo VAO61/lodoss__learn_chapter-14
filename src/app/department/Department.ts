@@ -1,8 +1,8 @@
 class Department {
-  projects = [];
-  developers = [];
-  doneProjects = [];
-  statisticFiredDevelopers = 0;
+  public projects: Array<any>;
+  public developers: Array<any>;
+  public doneProjects: Array<{ Project }>;
+  public statisticFiredDevelopers: number;
 
   constructor() {
     this.projects = [];

@@ -1,15 +1,15 @@
 import { ProjectFactory } from './_factories/ProjectFactory';
 
 class IncomingData {
-  manager;
-  days;
+  public manager: any;
+  public days: number;
 
   constructor(manager, days) {
     this.manager = manager;
     this.days = days;
   }
 
-  generateProjects() {
+  private generateProjects() {
     const countProjects = ProjectFactory.getRandom(0, 4);
     const projects = [];
     for (let i = 0; i < countProjects; i++) {

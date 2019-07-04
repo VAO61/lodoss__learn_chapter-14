@@ -6,10 +6,6 @@ class Department {
         this.developers = [];
         this.doneProjects = [];
         this.statisticFiredDevelopers = 0;
-        this.projects = [];
-        this.developers = [];
-        this.doneProjects = [];
-        this.statisticFiredDevelopers = 0;
     }
     /**
      * Возвращает массив незаняты разработчиков
