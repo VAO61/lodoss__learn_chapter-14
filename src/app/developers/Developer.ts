@@ -1,4 +1,9 @@
-class Developer {
+interface IDeveloper {
+  skill: number;
+  project: any;
+}
+
+class Developer implements IDeveloper {
   public skill: number;
   public project: any;
   public unBusyCount: any;
