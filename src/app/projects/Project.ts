@@ -1,6 +1,6 @@
 class Project {
-  difficulty;
-  progress = 0;
+  public difficulty: number;
+  public progress: number;
 
   constructor(difficulty) {
     this.difficulty = difficulty;

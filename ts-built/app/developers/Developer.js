@@ -5,9 +5,6 @@ class Developer {
         this.skill = 0;
         this.project = null;
         this.unBusyCount = 0;
-        this.skill = 0;
-        this.project = null;
-        this.unBusyCount = 0;
     }
     // ты занят?
     isBusy() {

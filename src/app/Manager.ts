@@ -4,15 +4,19 @@ import { WebProject } from './projects/WebProject';
 import { MobileProject } from './projects/MobileProject';
 
 class Manager {
-  webDept;
-  mobileDept;
-  testDept;
-  pendingProjects = []; // ожидающие принятия проекты
-  devDoneProjects = [];
-  doneProjects = [];
-  statisticHiredDevelopers = 0;
+  public webDept: any;
+  public mobileDept: any;
+  public testDept: any;
+  public pendingProjects: Array<any>;
+  public devDoneProjects: Array<number>;
+  public doneProjects: Array<number>;
+  public statisticHiredDevelopers: number;
 
-  constructor() {
+  constructor() /**
+   * Получить доступ к методам другого класса (лучше поздно, чем никогда)
+   */
+  // public readonly incomingData: IncomingData
+  {
     this.webDept = DepartmentFactory.createWebDept();
     this.mobileDept = DepartmentFactory.createMobileDept();
     this.testDept = DepartmentFactory.createTestDept();
@@ -20,6 +24,10 @@ class Manager {
     this.devDoneProjects = [];
     this.doneProjects = [];
     this.statisticHiredDevelopers = 0;
+    /**
+     * Объявить
+     */
+    // this.test = this.incomingData.statistic
   }
 
   hiredDevelopers() {

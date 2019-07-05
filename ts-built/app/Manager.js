@@ -5,10 +5,6 @@ const WebProject_1 = require("./projects/WebProject");
 const MobileProject_1 = require("./projects/MobileProject");
 class Manager {
     constructor() {
-        this.pendingProjects = []; // ожидающие принятия проекты
-        this.devDoneProjects = [];
-        this.doneProjects = [];
-        this.statisticHiredDevelopers = 0;
         this.webDept = DepartmentFactory_1.DepartmentFactory.createWebDept();
         this.mobileDept = DepartmentFactory_1.DepartmentFactory.createMobileDept();
         this.testDept = DepartmentFactory_1.DepartmentFactory.createTestDept();
@@ -16,6 +12,10 @@ class Manager {
         this.devDoneProjects = [];
         this.doneProjects = [];
         this.statisticHiredDevelopers = 0;
+        /**
+         * Объявить
+         */
+        // this.test = this.incomingData.statistic
     }
     hiredDevelopers() {
         // Найм сотрудников. Минимум один разработчик на один проект

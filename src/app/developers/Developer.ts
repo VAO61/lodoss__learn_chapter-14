@@ -1,7 +1,12 @@
-class Developer {
-  skill = 0;
-  project = null;
-  unBusyCount = 0;
+interface IDeveloper {
+  skill: number;
+  project: any;
+}
+
+class Developer implements IDeveloper {
+  public skill: number;
+  public project: any;
+  public unBusyCount: any;
 
   constructor() {
     this.skill = 0;
